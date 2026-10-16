@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudnexus-web
+  labels:
+    app: cloudnexus-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudnexus-web
+  template:
+    metadata:
+      labels:
+        app: cloudnexus-web
+    spec:
+      containers:
+        - name: nginx
+          image: 877270730577.dkr.ecr.ap-south-1.amazonaws.com/cloudnexus-dev-web:v1
+          ports:
+            - containerPort: 80

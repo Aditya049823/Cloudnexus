@@ -1,0 +1,12 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudnexus-web
+spec:
+  type: ClusterIP
+  selector:
+    app: cloudnexus-web
+  ports:
+    - port: 80
+      targetPort: 80
